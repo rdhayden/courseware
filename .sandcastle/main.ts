@@ -1,9 +1,9 @@
 import { run, claudeCode } from "@ai-hero/sandcastle";
-import { podman } from "@ai-hero/sandcastle/sandboxes/podman";
+import { docker } from "@ai-hero/sandcastle/sandboxes/docker";
 
 await run({
   agent: claudeCode("claude-opus-4-6"),
-  sandbox: podman(),
+  sandbox: docker(),
   promptFile: "./.sandcastle/prompt.md",
   maxIterations: 3,
   completionSignal: "<promise>NO MORE TASKS</promise>",
